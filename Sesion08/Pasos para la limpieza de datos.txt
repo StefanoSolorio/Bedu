@@ -1,0 +1,25 @@
+Limpieza de datos:
+	Importar a Google Sheets
+	Reemplazar ", UKOT" por ""
+	Reemplazar ", Republic of" por ""
+	Reemplazar ", Islamic Republic" por ""
+	Manualmente sumar los valores de las columnas "Casos" y "Muertes" de los territorios al pais que pertenecen
+	Manualmente quitar los registros que contengan "Grand total" en el campo Pais
+	Cambiar la columna de fecha a formato "yyyy-MM-dd hh:mm:ss"
+	Agregar columna de "id" y el valor correspondiente a cada registro
+
+
+Cargar el CSV:
+
+	Crear la base de datos y la tabla.
+
+	mysql> CREATE DATABASE sesion08;
+
+	mysql> CREATE TABLE 'h1n1' (
+		'id' int NOT NULL AUTO_INCREMENT,
+		'Country' varchar(50) NOT NULL,
+		'Cases' int NOT NULL,
+		'Deaths' int NOT NULL,
+		'Registrydate' datetime NOT NULL,
+		PRIMARY KEY ('id')
+	)
